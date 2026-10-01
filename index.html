@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>N.P. Vranina | Depo e Drurit</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f4efe7;
+    color:#2d1c10;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    background:rgba(38,24,14,.97);
+    box-shadow:0 3px 15px rgba(0,0,0,.25);
+}
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    min-height:75px;
+    padding:0 25px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    color:#e4a94e;
+    font-size:26px;
+    font-weight:800;
+    letter-spacing:1px;
+}
+
+.logo span{
+    color:white;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:28px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#e4a94e;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:100vh;
+    padding:120px 25px 70px;
+
+    background:
+    linear-gradient(
+        rgba(28,17,9,.72),
+        rgba(28,17,9,.85)
+    ),
+    url("https://images.unsplash.com/photo-1544967082-d9d25d867d66?auto=format&fit=crop&w=2000&q=90")
+    center/cover;
+}
+
+.hero-inner{
+    max-width:1200px;
+    min-height:75vh;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    align-items:center;
+    gap:50px;
+}
+
+.hero-text{
+    color:white;
+}
+
+.hero-text small{
+    color:#e8b15b;
+    font-size:17px;
+    font-weight:bold;
+    letter-spacing:3px;
+}
+
+.hero-text h1{
+    font-size:clamp(55px,8vw,90px);
+    line-height:1;
+    margin:18px 0 25px;
+}
+
+.hero-text h1 span{
+    color:#e4a94e;
+}
+
+.hero-text p{
+    max-width:650px;
+    color:#eee;
+    font-size:19px;
+    line-height:1.7;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 25px;
+    border-radius:7px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:#d89a3d;
+    color:#24160c;
+}
+
+.btn-primary:hover{
+    background:#efb557;
+    transform:translateY(-2px);
+}
+
+.btn-outline{
+    border:2px solid #e4a94e;
+    color:white;
+}
+
+.btn-outline:hover{
+    background:#e4a94e;
+    color:#24160c;
+}
+
+/* Foto hero */
+
+.hero-photo{
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 20px 50px rgba(0,0,0,.45);
+}
+
+.hero-photo img{
+    width:100%;
+    height:480px;
+    object-fit:cover;
+    display:block;
+}
+
+/* =========================
+   GENERAL
+========================= */
+
+section{
+    padding:90px 25px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title small{
+    color:#a86424;
+    letter-spacing:2px;
+    font-weight:bold;
+}
+
+.section-title h2{
+    font-size:43px;
+    margin:8px 0;
+}
+
+.section-title p{
+    color:#6d6057;
+    max-width:650px;
+    margin:auto;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about{
+    background:#fffdf9;
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+}
+
+.about h3{
+    font-size:34px;
+    margin-bottom:20px;
+}
+
+.about p{
+    color:#665b53;
+    margin-bottom:18px;
+    line-height:1.8;
+}
+
+.about-info{
+    background:#eee0cb;
+    border-left:5px solid #b5742b;
+    border-radius:8px;
+    padding:22px;
+    line-height:1.8;
+}
+
+.about-photo{
+    overflow:hidden;
+    border-radius:16px;
+    box-shadow:0 12px 30px rgba(0,0,0,.15);
+}
+
+.about-photo img{
+    width:100%;
+    height:400px;
+    object-fit:cover;
+    display:block;
+}
+
+/* =========================
+   SERVICES
+========================= */
+
+.services{
+    background:#f4efe7;
+}
+
+.service-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:30px;
+}
+
+.service-card{
+    background:white;
+    border-radius:16px;
+    overflow:hidden;
+    cursor:pointer;
+    box-shadow:0 10px 30px rgba(54,36,22,.12);
+    transition:.3s;
+}
+
+.service-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 18px 40px rgba(54,36,22,.2);
+}
+
+.service-photo{
+    height:330px;
+    overflow:hidden;
+}
+
+.service-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.service-card:hover .service-photo img{
+    transform:scale(1.05);
+}
+
+.service-content{
+    padding:25px;
+}
+
+.service-content h3{
+    font-size:27px;
+    margin-bottom:10px;
+}
+
+.service-content p{
+    color:#6c6158;
+    line-height:1.6;
+}
+
+.gallery-link{
+    display:block;
+    margin-top:15px;
+    color:#ae6925;
+    font-weight:bold;
+}
+
+/* =========================
+   EXTRA SERVICES
+========================= */
+
+.extra-grid{
+    margin-top:30px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.extra-card{
+    background:#fff;
+    padding:30px;
+    border-radius:14px;
+    border-top:4px solid #b5742b;
+    box-shadow:0 7px 25px rgba(0,0,0,.07);
+}
+
+.extra-card h3{
+    margin-bottom:10px;
+}
+
+.extra-card p{
+    color:#6b6057;
+}
+
+/* =========================
+   DELIVERY
+========================= */
+
+.delivery{
+    background:#322015;
+    color:white;
+}
+
+.delivery-box{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+}
+
+.delivery h2{
+    font-size:43px;
+    margin-bottom:18px;
+}
+
+.delivery p{
+    color:#ddd;
+    font-size:19px;
+    line-height:1.7;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact{
+    background:#fffdf9;
+}
+
+.contact-box{
+    max-width:800px;
+    margin:auto;
+    padding:40px;
+    background:#f1e5d2;
+    border-radius:16px;
+    text-align:center;
+}
+
+.contact-box h3{
+    font-size:30px;
+    margin-bottom:25px;
+}
+
+.contact-line{
+    margin:13px;
+    font-size:19px;
+}
+
+.contact-line strong{
+    color:#a76323;
+}
+
+.phone{
+    display:inline-block;
+    margin-top:20px;
+    font-size:22px;
+    color:#2d1c10;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#21140c;
+    color:#cfc4ba;
+    text-align:center;
+    padding:35px 20px;
+}
+
+footer strong{
+    color:#e4a94e;
+    font-size:22px;
+}
+
+/* =========================
+   MODAL GALERIA
+========================= */
+
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    z-index:5000;
+    background:rgba(0,0,0,.94);
+    padding:30px 20px;
+    overflow:auto;
+}
+
+.modal.active{
+    display:block;
+}
+
+.modal-box{
+    max-width:1150px;
+    margin:30px auto;
+    background:#fffdf8;
+    padding:35px;
+    border-radius:18px;
+    position:relative;
+}
+
+.modal-box h2{
+    text-align:center;
+    font-size:34px;
+    margin-bottom:30px;
+}
+
+.close{
+    position:absolute;
+    top:12px;
+    right:15px;
+    width:48px;
+    height:48px;
+    border:none;
+    border-radius:50%;
+    background:#b5742b;
+    color:white;
+    font-size:32px;
+    cursor:pointer;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.gallery img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+    border-radius:12px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.gallery img:hover{
+    transform:scale(1.03);
+}
+
+/* =========================
+   FULL PHOTO
+========================= */
+
+.photo-viewer{
+    display:none;
+    position:fixed;
+    inset:0;
+    z-index:6000;
+    background:rgba(0,0,0,.96);
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.photo-viewer.active{
+    display:flex;
+}
+
+.photo-viewer img{
+    max-width:95%;
+    max-height:90vh;
+    border-radius:10px;
+}
+
+.viewer-close{
+    position:absolute;
+    top:20px;
+    right:25px;
+    width:50px;
+    height:50px;
+    border:none;
+    border-radius:50%;
+    background:#d89a3d;
+    font-size:32px;
+    cursor:pointer;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:850px){
+
+    nav{
+        display:none;
+    }
+
+    .hero-inner,
+    .about-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+        text-align:center;
+    }
+
+    .hero-text p{
+        margin:auto;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    .service-grid{
+        grid-template-columns:1fr;
+    }
+
+    .extra-grid{
+        grid-template-columns:1fr;
+    }
+
+    .gallery{
+        grid-template-columns:1fr;
+    }
+
+    .gallery img{
+        height:270px;
+    }
+}
+
+@media(max-width:500px){
+
+    section{
+        padding:65px 18px;
+    }
+
+    .hero-text h1{
+        font-size:52px;
+    }
+
+    .hero-photo img{
+        height:300px;
+    }
+
+    .section-title h2{
+        font-size:33px;
+    }
+
+    .service-photo{
+        height:250px;
+    }
+
+    .modal-box{
+        padding:25px 15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<header>
+<div class="navbar">
+
+    <div class="logo">
+        N.P. <span>VRANINA</span>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="#home">Kryefaqja</a></li>
+            <li><a href="#about">Rreth Nesh</a></li>
+            <li><a href="#services">Shërbimet</a></li>
+            <li><a href="#delivery">Dërgesat</a></li>
+            <li><a href="#contact">Kontakti</a></li>
+        </ul>
+    </nav>
+
+</div>
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+<div class="hero-inner">
+
+    <div class="hero-text">
+
+        <small>DEPO & PËRPUNIM DRURI</small>
+
+        <h1>
+            N.P. <span>VRANINA</span>
+        </h1>
+
+        <p>
+            Dru për kulme, trarë, dërrasa dhe
+            konstruksione druri. Material cilësor
+            dhe shërbim profesional në Klinë.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#services" class="btn btn-primary">
+                Shiko Shërbimet
+            </a>
+
+            <a href="tel:049107753" class="btn btn-outline">
+                049 107 753
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-photo">
+
+        <img
+        src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=90"
+        alt="Shtëpi me kulm">
+
+    </div>
+
+</div>
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+<div class="container">
+
+    <div class="section-title">
+
+        <small>N.P. VRANINA</small>
+
+        <h2>Rreth Nesh</h2>
+
+        <p>
+            Material druri për ndërtim dhe kulme.
+        </p>
+
+    </div>
+
+
+    <div class="about-grid">
+
+        <div>
+
+            <h3>
+                Dru cilësor për punën tuaj
+            </h3>
+
+            <p>
+                N.P. Vranina është depo e drurit
+                në Klinë, me fokus në dru për kulme,
+                trarë, dërrasa dhe konstruksione.
+            </p>
+
+            <p>
+                Punojmë me material druri të
+                përshtatshëm për nevoja të ndryshme
+                ndërtimi.
+            </p>
+
+            <div class="about-info">
+
+                <strong>Pronari:</strong>
+                Taulant Tahirukaj
+
+                <br>
+
+                <strong>Lokacioni:</strong>
+                Klinë, Kosovë
+
+                <br>
+
+                <strong>Telefon:</strong>
+                049 107 753
+
+            </div>
+
+        </div>
+
+
+        <div class="about-photo">
+
+            <img
+            src="https://images.pexels.com/photos/8817839/pexels-photo-8817839.jpeg?auto=compress&cs=tinysrgb&w=1400"
+            alt="Konstruksion druri">
+
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+
+<!-- SHERBIMET -->
+
+<section class="services" id="services">
+
+<div class="container">
+
+    <div class="section-title">
+
+        <small>SHËRBIMET TONA</small>
+
+        <h2>Shërbimet</h2>
+
+        <p>
+            Klikoni mbi një kategori për të parë
+            fotografitë reale.
+        </p>
+
+    </div>
+
+
+    <div class="service-grid">
+
+
+        <!-- KULMA -->
+
+        <div
+        class="service-card"
+        onclick="openGallery('roofs')">
+
+            <div class="service-photo">
+
+                <img
+                src="https://images.pexels.com/photos/31763538/pexels-photo-31763538.jpeg?auto=compress&cs=tinysrgb&w=1400"
+                alt="Kulm shtëpie">
+
+            </div>
+
+            <div class="service-content">
+
+                <h3>Kulma të Shtëpive</h3>
+
+                <p>
+                    Konstruksione dhe materiale druri
+                    për kulma të shtëpive.
+                </p>
+
+                <span class="gallery-link">
+                    Shiko 3 fotografi →
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- DRUNJ -->
+
+        <div
+        class="service-card"
+        onclick="openGallery('wood')">
+
+            <div class="service-photo">
+
+                <img
+                src="https://images.pexels.com/photos/8817834/pexels-photo-8817834.jpeg?auto=compress&cs=tinysrgb&w=1400"
+                alt="Trarë druri">
+
+            </div>
+
+            <div class="service-content">
+
+                <h3>Drunj, Trarë & Dërrasa</h3>
+
+                <p>
+                    Materiale druri për konstruksione
+                    dhe punime të ndryshme.
+                </p>
+
+                <span class="gallery-link">
+                    Shiko 3 fotografi →
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- SHERBIME TE TJERA -->
+
+    <div class="extra-grid">
+
+        <div class="extra-card">
+
+            <h3>Përpunimi i Drurit</h3>
+
+            <p>
+                Përgatitje dhe përpunim i materialeve
+                prej druri për përdorime të ndryshme.
+            </p>
+
+        </div>
+
+
+        <div class="extra-card">
+
+            <h3>Cilësi e Lartë</h3>
+
+            <p>
+                Përzgjedhje e materialit dhe kujdes
+                gjatë përpunimit.
+            </p>
+
+        </div>
+
+
+        <div class="extra-card">
+
+            <h3>Dru për Ndërtim</h3>
+
+            <p>
+                Materiale druri për kulme,
+                konstruksione dhe ndërtime.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+
+<!-- DERGESAT -->
+
+<section class="delivery" id="delivery">
+
+<div class="container">
+
+    <div class="delivery-box">
+
+        <h2>Dërgesa në të Gjitha Vendet e Kosovës</h2>
+
+        <p>
+            N.P. Vranina bën dërgesa në të gjitha
+            vendet e Kosovës. Për porosi dhe
+            informata na kontaktoni në:
+        </p>
+
+        <a
+        href="tel:049107753"
+        class="btn btn-primary">
+            049 107 753
+        </a>
+
+    </div>
+
+</div>
+</section>
+
+
+<!-- KONTAKTI -->
+
+<section class="contact" id="contact">
+
+<div class="container">
+
+    <div class="section-title">
+
+        <small>NA KONTAKTONI</small>
+
+        <h2>Kontakti</h2>
+
+    </div>
+
+
+    <div class="contact-box">
+
+        <h3>N.P. VRANINA</h3>
+
+        <div class="contact-line">
+            <strong>Pronari:</strong>
+            Taulant Tahirukaj
+        </div>
+
+        <div class="contact-line">
+            <strong>Lokacioni:</strong>
+            Klinë, Kosovë
+        </div>
+
+        <div class="contact-line">
+            <strong>Telefon:</strong>
+            049 107 753
+        </div>
+
+        <a
+        class="phone"
+        href="tel:049107753">
+            Telefononi: 049 107 753
+        </a>
+
+    </div>
+
+</div>
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <strong>N.P. VRANINA</strong>
+
+    <p>
+        Depo e Drurit · Klinë, Kosovë
+    </p>
+
+    <p>
+        © 2026 N.P. Vranina
+    </p>
+
+</footer>
+
+
+<!-- GALERIA -->
+
+<div class="modal" id="galleryModal">
+
+    <div class="modal-box">
+
+        <button
+        class="close"
+        onclick="closeGallery()">
+            ×
+        </button>
+
+        <h2 id="galleryTitle"></h2>
+
+        <div
+        class="gallery"
+        id="gallery">
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- FOTO E MADHE -->
+
+<div class="photo-viewer" id="photoViewer">
+
+    <button
+    class="viewer-close"
+    onclick="closePhoto()">
+        ×
+    </button>
+
+    <img
+    id="largePhoto"
+    src=""
+    alt="N.P. Vranina">
+
+</div>
+
+
+<script>
+
+/* ===================================
+   GALERITE
+=================================== */
+
+const galleries = {
+
+    roofs: {
+
+        title:"Kulma të Shtëpive",
+
+        images:[
+
+            "https://images.pexels.com/photos/31763538/pexels-photo-31763538.jpeg?auto=compress&cs=tinysrgb&w=1600",
+
+            "https://images.pexels.com/photos/31763537/pexels-photo-31763537.jpeg?auto=compress&cs=tinysrgb&w=1600",
+
+            "https://images.pexels.com/photos/8817839/pexels-photo-8817839.jpeg?auto=compress&cs=tinysrgb&w=1600"
+
+        ]
+
+    },
+
+
+    wood: {
+
+        title:"Drunj, Trarë & Dërrasa",
+
+        images:[
+
+            "https://images.pexels.com/photos/8817834/pexels-photo-8817834.jpeg?auto=compress&cs=tinysrgb&w=1600",
+
+            "https://images.pexels.com/photos/5484752/pexels-photo-5484752.jpeg?auto=compress&cs=tinysrgb&w=1600",
+
+            "https://cdn.pixabay.com/photo/2020/02/03/13/12/wooden-4813315_1280.jpg"
+
+        ]
+
+    }
+
+};
+
+
+/* ===================================
+   HAP GALERINE
+=================================== */
+
+function openGallery(type){
+
+    const data=galleries[type];
+
+    document.getElementById("galleryTitle")
+        .textContent=data.title;
+
+    const gallery=document.getElementById("gallery");
+
+    gallery.innerHTML="";
+
+    data.images.forEach(function(src){
+
+        const img=document.createElement("img");
+
+        img.src=src;
+
+        img.alt=data.title;
+
+        img.onclick=function(){
+
+            openPhoto(src);
+
+        };
+
+        gallery.appendChild(img);
+
+    });
+
+    document
+        .getElementById("galleryModal")
+        .classList.add("active");
+
+    document.body.style.overflow="hidden";
+}
+
+
+/* ===================================
+   MBYLL GALERINE
+=================================== */
+
+function closeGallery(){
+
+    document
+        .getElementById("galleryModal")
+        .classList.remove("active");
+
+    document.body.style.overflow="auto";
+}
+
+
+/* ===================================
+   FOTO E MADHE
+=================================== */
+
+function openPhoto(src){
+
+    document
+        .getElementById("largePhoto")
+        .src=src;
+
+    document
+        .getElementById("photoViewer")
+        .classList.add("active");
+
+}
+
+
+/* ===================================
+   MBYLL FOTO
+=================================== */
+
+function closePhoto(){
+
+    document
+        .getElementById("photoViewer")
+        .classList.remove("active");
+
+}
+
+
+/* ===================================
+   ESC
+=================================== */
+
+document.addEventListener("keydown",function(e){
+
+    if(e.key==="Escape"){
+
+        closeGallery();
+        closePhoto();
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>
